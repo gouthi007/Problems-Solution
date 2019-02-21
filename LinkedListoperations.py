@@ -38,7 +38,6 @@ class LinkedList:
     def insertNode(self, before, data):
         newNode = Node(data)
         curr = self.head
-        previousNode = None
         while curr is not None:
             if curr.data == before:
                 newNode.next = curr.next
