@@ -54,7 +54,7 @@ void deletefirst()
     
 }
 
-void isempty()
+int isempty()
 {
     return count;
 }
@@ -109,6 +109,42 @@ void reverse()
     }
     head = previous;
 }
+
+void swapp(struct node *a, struct node *b)
+{
+    int temp = a->data ;
+    a->data = b->data;
+    b->data = temp;
+    
+}
+
+void sort()
+{
+    int swap;
+    struct node *current;
+    //struct node *ltr = NULL;
+    if (head == NULL)
+        return;
+        
+    do
+    {
+        printf("worjinf");
+        swap = 0;
+        current = head;
+        while(current->next != NULL)
+        {
+            if(current->data > current->next->data)
+                {
+                    swapp(current, current->next);
+                    swap = 1;
+                    
+                }
+                current = current->next;
+        }
+        
+    }
+    while (swap);
+}
 void main()
 
 {   
@@ -130,4 +166,8 @@ void main()
     reverse();
     printf("reversed\n");
     printfirst();
+    sort();
+    printf("asafsagagdddddddddddddddddddd00\n");
+    printfirst();
+    
 }
